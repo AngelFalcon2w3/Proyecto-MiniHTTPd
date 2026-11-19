@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico Vida Saludable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navegación -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="icon">+</span>
+                <span>Vida Saludable</span>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#medicos">Especialistas</a>
+                <a href="#citas">Reservar Cita</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <a href="#citas" class="btn btn-primary">Pedir Cita</a>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Tu salud en las mejores manos</h1>
+                <p>Ofrecemos atención médica integral con tecnología avanzada y profesionales especializados para cuidar de ti y de tu familia.</p>
+                <div class="hero-buttons">
+                    <a href="#citas" class="btn btn-primary">Agendar Cita Médica</a>
+                    <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Atención de Urgencias</h3>
+                <p>Servicio continuo las 24 horas, los 365 días del año.</p>
+                <p class="phone">📞 1800-SALUD-VIDA</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios Médicos</h2>
+            <div class="grid cards-grid">
+                <div class="card">
+                    <div class="card-icon">🩺</div>
+                    <h3>Medicina General</h3>
+                    <p>Evaluaciones rutinarias, diagnóstico preventivo y tratamiento para toda la familia.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">❤️</div>
+                    <h3>Cardiología</h3>
+                    <p>Estudios especializados del corazón, electrocardiogramas y control de hipertensión.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">👶</div>
+                    <h3>Pediatría</h3>
+                    <p>Cuidado especializado para los más pequeños, vacunación y seguimiento de desarrollo.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧪</div>
+                    <h3>Laboratorio Clínico</h3>
+                    <p>Análisis sanguíneos y pruebas diagnósticas con resultados rápidos y confiables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="medicos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Nuestros Especialistas</h2>
+            <div class="search-box">
+                <input type="text" id="doctor-search" placeholder="Buscar por especialidad o nombre del médico...">
+            </div>
+            <div class="grid doctors-grid" id="doctors-list">
+                <div class="doctor-card" data-specialty="cardiologia">
+                    <div class="avatar">Dra</div>
+                    <h3>Dra. Sofía Mendoza</h3>
+                    <p class="spec">Cardiología Clínica</p>
+                    <p class="experience">12 años de experiencia</p>
+                </div>
+                <div class="doctor-card" data-specialty="pediatria">
+                    <div class="avatar">Dr</div>
+                    <h3>Dr. Carlos Paredes</h3>
+                    <p class="spec">Pediatría & Neonatología</p>
+                    <p class="experience">15 años de experiencia</p>
+                </div>
+                <div class="doctor-card" data-specialty="general">
+                    <div class="avatar">Dra</div>
+                    <h3>Dra. Elena Gómez</h3>
+                    <p class="spec">Medicina General</p>
+                    <p class="experience">8 años de experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="citas" class="section">
+        <div class="container">
+            <h2 class="section-title">Reserva tu Cita Médica</h2>
+            <form id="appointment-form" class="form">
+                <div class="form-group">
+                    <label for="name">Nombre Completo:</label>
+                    <input type="text" id="name" required placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono / WhatsApp:</label>
+                    <input type="tel" id="phone" required placeholder="Ej. 0991234567">
+                </div>
+                <div class="form-group">
+                    <label for="service">Especialidad requerida:</label>
+                    <select id="service" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Medicina General">Medicina General</option>
+                        <option value="Cardiología">Cardiología</option>
+                        <option value="Pediatría">Pediatría</option>
+                        <option value="Laboratorio">Laboratorio Clínico</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha preferida:</label>
+                    <input type="date" id="date" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Confirmar Reserva</button>
+            </form>
+            
+            <div id="confirmation-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>¡Cita Reservada con Éxito!</h3>
+                    <p id="modal-details"></p>
+                    <button id="close-modal" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Centro Médico Vida Saludable</h3>
+                <p>Atención médica de calidad al alcance de todos.</p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>📍 Av. de la Prensa N45-12, Quito, Ecuador</p>
+                <p>✉️ contacto@vidasaludable.com</p>
+                <p>📞 (02) 234-5678</p>
+            </div>
+            <div>
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 07:00 - 19:00</p>
+                <p>Sábados: 08:00 - 14:00</p>
+                <p>Urgencias: 24 Horas</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Centro Médico Vida Saludable. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
